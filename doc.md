@@ -77,9 +77,14 @@ export default {
 ]
 ```
 
-## demo1 --使用插件
-
-
+## demo3 --使用插件
+rollup自身功能只是esm模块的打包
+如果需要支持
+1. 加载其它类型资源模块
+2. 导入CommonJs模块
+3. 编译ECMAScript新特性
+可以使用插件的方式来实现扩展
+插件是rollup唯一扩展途径
 
 
 
