@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "rollup": "^3.23.1",
+    "rollup-plugin-json": "^4.0.0"
+  }
+}
