@@ -85,18 +85,55 @@ rollup自身功能只是esm模块的打包
 3. 编译ECMAScript新特性
 可以使用插件的方式来实现扩展
 插件是rollup唯一扩展途径
+通过plugins数组配置插件
+plugins:[
+  
+]
+源码中使用
+```js
+import { name, version } from '../package.json';
+```
+打包结果只会包含name、version，其他属性都会被tree shaking
+```js
+(function () {
+  'use strict';
+
+  const log = msg => {
+    console.log('------INFO-------');
+    console.log(msg);
+    console.log('-----------------');
+  };
+
+  var message = {
+    hi: 'rollup hello'
+  };
+
+  var name = "demo3";
+  var version = "1.0.0";
+
+  const msg = message.hi;
+
+  log(msg);
+  log(name);
+  log(version);
+
+}());
+```
 
 
+## demo4 --加载 NPM 模块
+rollup默认只能通过文件路径导入本地模块
+对于node_modules中第三方模块，并不能像webpack中那样通过模块名称带入模块
+rollup需要使用rollup-plugin-node-resolve插件
+使用该插件就可以通过模块名称带入模块
+```js
+import _ from 'lodash-es';
+```
 
-## demo1 --快速上手
-
-
-
-
-
-
-## demo1 --快速上手
-
+## demo5 --加载 CommonJS模块
+rollup设计只处理esm模块打包，如果项目中使CommonJS模块，默认是不支持
+目前很多npm是通过CommonJS导出成员，如果需要使用CommonJS模块
+需要使用rollup-plugin-commonjs
 
 
 

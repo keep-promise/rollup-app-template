@@ -1,9 +1,8 @@
 {
-  "name": "demo3",
-  "version": "1.0.0",
+  "type": "module",
   "devDependencies": {
     "rollup": "^1.26.3",
-    "rollup-plugin-json": "^4.0.0"
+    "rollup-plugin-commonjs": "^10.1.0"
   },
   "scripts": {
     "build": "yarn rollup --config rollup.config.js"

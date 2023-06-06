@@ -1,4 +1,5 @@
-import json from 'rollup-plugin-json';
+import resolve from 'rollup-plugin-node-resolve';
+
 
 export default {
   input: 'src/index.js', // 打包入口
@@ -7,6 +8,6 @@ export default {
     format: 'iife' // 输出格式自执行函数
   },
   plugins: [
-    json() // 使用json插件，就可以在项目中使用json文件
+    resolve()
   ]
 }
